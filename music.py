@@ -1,0 +1,1 @@
+print("C        G         Am  Vivir de amor es mi destino  F   G        C  darlo todo sin pedir  C        G         Am  es la razón de mi camino  F        G        C  ser feliz y hacer feliz ")
