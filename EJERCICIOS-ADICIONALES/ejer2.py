@@ -25,3 +25,37 @@ Mostrar la lista de clientes preferentes de la base de datos
 con su NIF y nombre.
 Terminar el programa.
 '''
+clientes={}
+opcion= ''
+while opcion != '6':
+    if opcion == '1':
+        nif=input("Por favor ingrese el NIF del cliente: ")
+        nombre=input("Por favor ingrese el nombre del cliente: ")
+        direccion=input("Por favor ingrese la dirección del cliente: ")
+        telefono=input("Por favor ingrese el teléfono del cliente: ")
+        correo=input("Por favor ingrese el correo del cliente: ")
+        preferente=input("Por favor ingrese si el cliente es preferente: ")
+        clientes[nif]={'nombre':nombre, 'direccion':direccion, 'telefono':telefono, 'correo':correo, 'preferente':preferente}
+    if opcion == '2':
+        nif=input("Por favor ingrese el NIF del cliente: ")
+        if nif in clientes:
+            del clientes[nif]
+        else:
+            print("El cliente no existe")
+    
+    if opcion == '3':
+        nif=input("Por favor ingrese el NIF del cliente: ")
+        if nif in clientes:
+            print('NIF', nif)
+            for clave,valores in clientes[nif].items():
+                print(clave,':',valores)
+        else:
+            print("El cliente no existe")
+    
+    if opcion== '4':
+        print("Lista de clientes: ")
+        for clave,valores in clientes.items():
+                print(clave,':',valores)
+            
+    
+    opcion= input("Por favor ingrese una opción del siguiente menú: \n(1) Añadir cliente, \n(2) Eliminar cliente, \n(3) Mostrar cliente,\n(4) Listar todos los clientes, \n(5) Listar clientes preferentes, \n(6) Terminar. ")
